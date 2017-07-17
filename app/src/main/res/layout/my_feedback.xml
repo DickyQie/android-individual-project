@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ripple="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/public_top"></include>
+    <EditText
+        android:id="@+id/feedback_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="195dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/text_shape_style"
+        android:ems="10"
+        android:gravity="top|left"
+        android:hint="请留下您的意见"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:textSize="12dp" />
+
+    <EditText
+        android:id="@+id/tel_email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/text_shape_style"
+        android:ems="10"
+        android:hint="请输入你的电话号码)"
+        android:paddingLeft="10dp"
+        android:textSize="12dp"
+        />
+
+    <com.zhangqie.miyucalculator.widget.RippleView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ripple:rv_type="rectangle"
+        android:layout_marginTop="35dp"
+        ripple:rv_zoom="true"
+        >
+
+    <TextView
+        android:id="@+id/feedback_submit"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/border_red_roval_sign"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="提交"
+        android:textColor="#FFFFFF"
+        android:textSize="12dp" />
+    </com.zhangqie.miyucalculator.widget.RippleView>
+
+
+
+</LinearLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/public_top"></include>
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1：歆语混合计算器，触手可及，畅享运算，欢迎使用。"
+        android:layout_marginTop="35dp"
+        android:textSize="@dimen/siez_dime6"
+        android:textColor="@android:color/black"
+        android:layout_marginLeft="@dimen/dp5"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2：支持4则混合运算,可以同时加，减，乘，除，前提是计算格式要输入正确。"
+        android:layout_marginTop="25dp"
+        android:textSize="@dimen/siez_dime6"
+        android:textColor="@android:color/black"
+        android:layout_marginLeft="@dimen/dp5"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="3：在输入运算时，单个数不等大于15位数。"
+        android:layout_marginTop="25dp"
+        android:textSize="@dimen/siez_dime6"
+        android:textColor="@android:color/black"
+        android:layout_marginLeft="@dimen/dp5"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="4：在输入运算符时，%只能计算两位数，不能计算多个式子。"
+        android:layout_marginTop="25dp"
+        android:textSize="@dimen/siez_dime6"
+        android:textColor="@android:color/black"
+        android:layout_marginLeft="@dimen/dp5"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="5：在输入运算式时，式子总长度不能超过16位。"
+        android:textSize="@dimen/siez_dime6"
+        android:layout_marginTop="25dp"
+        android:textColor="@android:color/black"
+        android:layout_marginLeft="@dimen/dp5"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="6：如果使用中遇到问题，希望向我反馈，可通过QQ，邮箱等。"
+        android:textSize="@dimen/siez_dime6"
+        android:layout_marginTop="25dp"
+        android:textColor="@android:color/black"
+        android:layout_marginLeft="@dimen/dp5"
+        />
+
+</LinearLayout>

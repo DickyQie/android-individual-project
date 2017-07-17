@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/ic_account_balance_black_24dp"
+            android:title="个人中心" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="相关设置" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_create_black_24dp"
+            android:title="意见反馈" />
+    </group>
+
+    <item android:title="更多操作">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="好友分享" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="关于我们" />
+        </menu>
+    </item>
+
+</menu>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGray"
+    >
+
+    <include layout="@layout/public_top"></include>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="25dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:orientation="horizontal"
+            android:background="@android:color/white"
+            android:paddingLeft="11dp"
+            android:gravity="center_vertical"
+            >
+            <ImageView
+                android:id="@+id/my_logo"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:scaleType="fitXY"
+                android:layout_marginRight="15dp"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hello Calculator"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginBottom="3dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="账号：切切歆语"
+                    android:textSize="13sp"
+                    android:textColor="@color/colorGray2"
+                    android:layout_marginTop="3dp"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.zhangqie.miyucalculator.widget.PreferenceItem
+        android:id="@+id/my_share"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:background="@android:color/white"
+        >
+    </com.zhangqie.miyucalculator.widget.PreferenceItem>
+    <com.zhangqie.miyucalculator.widget.PreferenceItem
+        android:id="@+id/my_clear_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:background="@android:color/white"
+        >
+
+    </com.zhangqie.miyucalculator.widget.PreferenceItem>
+    <com.zhangqie.miyucalculator.widget.PreferenceItem
+        android:id="@+id/my_update_version"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:background="@android:color/white"
+        >
+
+    </com.zhangqie.miyucalculator.widget.PreferenceItem>
+    <com.zhangqie.miyucalculator.widget.PreferenceItem
+        android:id="@+id/my_help"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:background="@android:color/white"
+        >
+    </com.zhangqie.miyucalculator.widget.PreferenceItem>
+
+
+
+
+</LinearLayout>

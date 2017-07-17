@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">歆语计算器</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">关于我们</string>
+    <string name="calculator_feedback">意见反馈</string>
+    <string name="calculator_about">关于</string>
+    <string name="calculator_setting">设置</string>
+
+
+    <string name="is_tel">请输入正确的手机号码</string>
+    <string name="is_feedback_true">发送成功，谢谢你的意见</string>
+    <string name="content_null">请输入内容</string>
+    <string name="mi_content_msg">个人中心</string>
+    <string name="caculator_help">帮助和使用</string>
+
+
+
+
+
+    <!--error-->
+    <string name="error_calculator_quyus">输入的算式不可取余!</string>
+    <string name="error_calculator_quyuoli">取余不能为零!</string>
+    <string name="error_calculator_chushuoli">除数不能为零!</string>
+    <string name="error_calculator_error">计算公式输入有误!</string>
+    <string name="error_calculator_test">请输入正确的算数格式!</string>
+
+
+    <string name="stsc_web_loading">正在加载中...</string>
+    <string name="no_network">网络未连接</string>
+    <string name="no_network_error">请检查网络是否连接</string>
+    <string name="no_network_click_loading">请检查网络后点击加载</string>
+    <string name="error_no_data">数据加载失败</string>
+    <string name="error_request_no_data">数据请求失败</string>
+    <string name="error_load_failed">网络异常,加载失败</string>
+
+
+
+
+    <string name="my_common_information">设置</string>
+    <string name="my_share">分享给好友</string>
+    <string name="my_clear_data">清除数据</string>
+    <string name="my_updates_version">检查更新</string>
+    <string name="my_help">帮助使用</string>
+
+    <string name="dialog_title">提示</string>
+    <string name="dialog_message">清除数据将删除应用缓存的数据，无法恢复，是否继续 ?</string>
+    <string name="dialog_messge_version">目前已是最新版本</string>
+    <string name="dialog_ok">确定</string>
+    <string name="dialog_close">关闭</string>
+
+    <string name="data_clear">数据清理完成</string>
+
+
+</resources>
