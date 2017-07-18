@@ -26,9 +26,10 @@
         />
 
         <TextView
+            android:id="@+id/app_version"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="V1 . 0 . 1"
+            android:text="V2 . 1 . 0"
             android:textSize="12sp"
             android:textColor="@android:color/black"
             android:layout_marginTop="11dp"
@@ -47,7 +48,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@mipmap/qrcode"
+        android:src="@mipmap/xinyu"
         android:layout_marginTop="11dp"
         />
     <RelativeLayout

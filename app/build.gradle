@@ -7,7 +7,7 @@ android {
         applicationId "com.zhangqie.miyucalculator"
         minSdkVersion 15
         targetSdkVersion 22
-        versionCode 1
+        versionCode 2
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -30,4 +30,5 @@ dependencies {
     compile 'com.github.bumptech.glide:glide:3.7.0'
     testCompile 'junit:junit:4.12'
     compile files('libs/open_sdk_r5509.jar')
+    compile files('libs/libammsdk.jar')
 }

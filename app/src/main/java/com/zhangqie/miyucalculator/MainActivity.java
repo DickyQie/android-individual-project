@@ -22,6 +22,7 @@ import com.zhangqie.miyucalculator.ui.my.MyContentActivity;
 import com.zhangqie.miyucalculator.ui.my.SettingActivity;
 import com.zhangqie.miyucalculator.util.Calculator;
 import com.zhangqie.miyucalculator.util.UtilDB;
+import com.zhangqie.miyucalculator.util.UtilDao;
 
 import java.math.BigDecimal;
 
@@ -59,7 +60,8 @@ public class MainActivity extends BaseActivity
     @Bind(R.id.drawer_layout)
     DrawerLayout drawer;
 
-
+    Tencent mTencent;
+    String mAppid="1106218221";
     @Override
     protected int setMainLayout() {
         return R.layout.activity_main;
@@ -135,7 +137,7 @@ public class MainActivity extends BaseActivity
             openActivity(FeedBackActivity.class);
         }
         else if (id == R.id.nav_share) {
-            onClickShare();
+            UtilDao.SHOWSHAREQQ(mTencent,MainActivity.this);
         }
         else if (id == R.id.nav_send) {
             openActivity(AboutActivity.class);
@@ -359,25 +361,10 @@ public class MainActivity extends BaseActivity
         }
     }
 
-    Tencent mTencent;
-    String mAppid="1106218221";
 
 
-    //qq分享
-    private void onClickShare() {
-        final Bundle params = new Bundle();
-        params.putInt(QQShare.SHARE_TO_QQ_KEY_TYPE,
-                QQShare.SHARE_TO_QQ_TYPE_DEFAULT);
-        params.putString(QQShare.SHARE_TO_QQ_TITLE, "歆语计算器");
-        params.putString(QQShare.SHARE_TO_QQ_SUMMARY, "歆语混合计算器，触手可及，畅享运算");
-        params.putString(QQShare.SHARE_TO_QQ_TARGET_URL,
-                "http://shouji.baidu.com/software/8655742.html");
-        params.putString(QQShare.SHARE_TO_QQ_IMAGE_URL,
-                "http://imgcache.qq.com/qzone/space_item/pre/0/66768.gif");
-        params.putString(QQShare.SHARE_TO_QQ_APP_NAME, "切切歆语");
-        params.putString(QQShare.SHARE_TO_QQ_EXT_INT, "其他附加功能");
-        mTencent.shareToQQ(MainActivity.this, params, null);
-    }
+
+
 
 
 

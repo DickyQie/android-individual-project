@@ -5,6 +5,7 @@ import android.widget.TextView;
 
 import com.zhangqie.miyucalculator.R;
 import com.zhangqie.miyucalculator.base.BaseActivity;
+import com.zhangqie.miyucalculator.util.UtilDao;
 
 import butterknife.Bind;
 import butterknife.OnClick;
@@ -17,6 +18,8 @@ public class AboutActivity extends BaseActivity{
 
     @Bind(R.id.home_top_name)
     TextView homeTopName;
+    @Bind(R.id.app_version)
+    TextView appVersion;
 
     @Override
     protected int setMainLayout() {
@@ -28,6 +31,7 @@ public class AboutActivity extends BaseActivity{
     }
     @Override
     protected void initBeforeData() {
+        appVersion.setText(UtilDao.getVersion(this).replace("."," . "));
     }
 
     @OnClick({R.id.home_tour_close})

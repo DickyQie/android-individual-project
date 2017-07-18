@@ -1,5 +1,8 @@
 package com.zhangqie.miyucalculator.util;
 
+import android.graphics.Bitmap;
+
+import java.io.ByteArrayOutputStream;
 import java.math.BigDecimal;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -9,6 +12,26 @@ import java.util.regex.Pattern;
  */
 
 public class Util {
+
+
+
+    public static byte[] bmpToByteArray(final Bitmap bmp, final boolean needRecycle) {
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        bmp.compress(Bitmap.CompressFormat.PNG, 100, output);
+        if (needRecycle) {
+            bmp.recycle();
+        }
+
+        byte[] result = output.toByteArray();
+        try {
+            output.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return result;
+    }
+
 
     public static float opt(String s) throws Exception{
         if(s == null || "".equals(s.trim())) {

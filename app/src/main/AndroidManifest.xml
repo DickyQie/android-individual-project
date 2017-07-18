@@ -27,7 +27,13 @@
         <activity android:name=".ui.my.MyHelpActivity"></activity>
 
 
-
+        <receiver
+            android:name="com.zhangqie.miyucalculator.wx.AppRegister"
+            android:permission="com.tencent.mm.plugin.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP" />
+            </intent-filter>
+        </receiver>
 
 
 
