@@ -31,7 +31,11 @@ public class AboutActivity extends BaseActivity{
     }
     @Override
     protected void initBeforeData() {
-        appVersion.setText(UtilDao.getVersion(this).replace("."," . "));
+        try {
+            appVersion.setText(UtilDao.getVersion(this).replace("."," . "));
+        } catch (Exception e) {
+            appVersion.setText("V2 . 2 . 1");
+        }
     }
 
     @OnClick({R.id.home_tour_close})

@@ -45,7 +45,6 @@ public class SettingActivity extends BaseActivity {
     PopupWindow popupWindow;
     LinearLayout linearLayout;
     Tencent mTencent;
-    String mAppid="1106218221";
 
     @Override
     protected int setMainLayout() {
@@ -62,7 +61,7 @@ public class SettingActivity extends BaseActivity {
                 .bitmapTransform(new RoundedCornersTransformation(this,25))
                 .into(myLogo);
         if (mTencent == null) {
-            mTencent = Tencent.createInstance(mAppid, SettingActivity.this);
+            mTencent = Tencent.createInstance(getString(R.string.appId), SettingActivity.this);
         }
     }
 
@@ -142,10 +141,14 @@ public class SettingActivity extends BaseActivity {
     }
 
     private void showShareThree() {
-        popupWindow = new PopupWindow(SettingActivity.this);
-        View view = getLayoutInflater().inflate(R.layout.share_popupwindows, null);
-        linearLayout = (LinearLayout) view.findViewById(R.id.ll_popup);
-        UtilDao.SHOWPOPUPWINDOW(mTencent,view,popupWindow,linearLayout,SettingActivity.this);
+        try {
+            popupWindow = new PopupWindow(SettingActivity.this);
+            View view = getLayoutInflater().inflate(R.layout.share_popupwindows, null);
+            linearLayout = (LinearLayout) view.findViewById(R.id.ll_popup);
+            UtilDao.SHOWPOPUPWINDOW(mTencent,view,popupWindow,linearLayout,SettingActivity.this);
+        } catch (Exception e) {
+           showToastShort("分享失败");
+        }
     }
 
 

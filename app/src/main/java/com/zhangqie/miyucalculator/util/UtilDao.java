@@ -13,14 +13,15 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.tencent.connect.share.QQShare;
 import com.tencent.connect.share.QzoneShare;
-import com.tencent.mm.sdk.modelmsg.SendMessageToWX;
-import com.tencent.mm.sdk.modelmsg.WXMediaMessage;
-import com.tencent.mm.sdk.modelmsg.WXWebpageObject;
-import com.tencent.mm.sdk.openapi.IWXAPI;
-import com.tencent.mm.sdk.openapi.WXAPIFactory;
+import com.tencent.mm.opensdk.modelmsg.SendMessageToWX;
+import com.tencent.mm.opensdk.modelmsg.WXMediaMessage;
+import com.tencent.mm.opensdk.modelmsg.WXWebpageObject;
+import com.tencent.mm.opensdk.openapi.IWXAPI;
+import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 import com.tencent.tauth.Tencent;
 import com.zhangqie.miyucalculator.R;
 import com.zhangqie.miyucalculator.wx.Constants;
@@ -46,9 +47,9 @@ public class UtilDao {
                     String version ="V "+info.versionCode+"."+info.versionName;
                     return  version;
                 } catch (Exception e) {
-                     return "V 2.0.1";
+                     return "V 2.2.1";
             }
-         }
+    }
 
 
     /***
@@ -57,18 +58,22 @@ public class UtilDao {
      * @param activity
      */
     public static final void SHOWSHAREQQ(Tencent mTencent, Activity activity) {
-        final Bundle params = new Bundle();
-        params.putInt(QQShare.SHARE_TO_QQ_KEY_TYPE,
-                QQShare.SHARE_TO_QQ_TYPE_DEFAULT);
-        params.putString(QQShare.SHARE_TO_QQ_TITLE, "歆语计算器");
-        params.putString(QQShare.SHARE_TO_QQ_SUMMARY, "歆语混合计算器，触手可及，畅享运算");
-        params.putString(QQShare.SHARE_TO_QQ_TARGET_URL,
-                "http://shouji.baidu.com/software/21842018.html");
-        params.putString(QQShare.SHARE_TO_QQ_IMAGE_URL,
-                "http://img.r1.market.hiapk.com/data/upload/2017/07_15/15/72_72_20170715031045_7155.png");
-        params.putString(QQShare.SHARE_TO_QQ_APP_NAME, "切切歆语");
-        params.putString(QQShare.SHARE_TO_QQ_EXT_INT, "其他附加功能");
-        mTencent.shareToQQ(activity, params, null);
+        try {
+            final Bundle params = new Bundle();
+            params.putInt(QQShare.SHARE_TO_QQ_KEY_TYPE,
+                    QQShare.SHARE_TO_QQ_TYPE_DEFAULT);
+            params.putString(QQShare.SHARE_TO_QQ_TITLE, "歆语计算器");
+            params.putString(QQShare.SHARE_TO_QQ_SUMMARY, "歆语混合计算器，触手可及，畅享运算");
+            params.putString(QQShare.SHARE_TO_QQ_TARGET_URL,
+                    "http://shouji.baidu.com/software/21842018.html");
+            params.putString(QQShare.SHARE_TO_QQ_IMAGE_URL,
+                    "http://img.r1.market.hiapk.com/data/upload/2017/07_15/15/72_72_20170715031045_7155.png");
+            params.putString(QQShare.SHARE_TO_QQ_APP_NAME, "切切歆语");
+            params.putString(QQShare.SHARE_TO_QQ_EXT_INT, "其他附加功能");
+            mTencent.shareToQQ(activity, params, null);
+        } catch (Exception e) {
+            Toast.makeText(activity,"分享失败",Toast.LENGTH_LONG).show();
+        }
     }
 
 
@@ -78,20 +83,24 @@ public class UtilDao {
      * @param activity
      */
     public static final void SHOWSHAREQQZONE(Tencent mTencent, Activity activity) {
-        final Bundle params = new Bundle();
-        params.putInt(QzoneShare.SHARE_TO_QZONE_KEY_TYPE,
-                QzoneShare.SHARE_TO_QZONE_TYPE_IMAGE_TEXT);
-        params.putString(QzoneShare.SHARE_TO_QQ_TITLE, "歆语计算器");
-        params.putString(QzoneShare.SHARE_TO_QQ_SUMMARY, "歆语混合计算器，触手可及，畅享运算");
-        params.putString(QzoneShare.SHARE_TO_QQ_APP_NAME, "切切歆语");
-        params.putString(QzoneShare.SHARE_TO_QQ_TARGET_URL,
-                "http://shouji.baidu.com/software/21842018.html");
-        ArrayList<String> imageUrls = new ArrayList<String>();
-        imageUrls.add("http://img.r1.market.hiapk.com/data/upload/2017/07_15/15/72_72_20170715031045_7155.png");
-        params.putStringArrayList(QzoneShare.SHARE_TO_QQ_IMAGE_URL, imageUrls);
-        params.putInt(QzoneShare.SHARE_TO_QQ_EXT_INT,
-                QQShare.SHARE_TO_QQ_FLAG_QZONE_AUTO_OPEN);
-        mTencent.shareToQzone(activity, params, null);
+        try {
+            final Bundle params = new Bundle();
+            params.putInt(QzoneShare.SHARE_TO_QZONE_KEY_TYPE,
+                    QzoneShare.SHARE_TO_QZONE_TYPE_IMAGE_TEXT);
+            params.putString(QzoneShare.SHARE_TO_QQ_TITLE, "歆语计算器");
+            params.putString(QzoneShare.SHARE_TO_QQ_SUMMARY, "歆语混合计算器，触手可及，畅享运算");
+            params.putString(QzoneShare.SHARE_TO_QQ_APP_NAME, "切切歆语");
+            params.putString(QzoneShare.SHARE_TO_QQ_TARGET_URL,
+                    "http://shouji.baidu.com/software/21842018.html");
+            ArrayList<String> imageUrls = new ArrayList<String>();
+            imageUrls.add("http://img.r1.market.hiapk.com/data/upload/2017/07_15/15/72_72_20170715031045_7155.png");
+            params.putStringArrayList(QzoneShare.SHARE_TO_QQ_IMAGE_URL, imageUrls);
+            params.putInt(QzoneShare.SHARE_TO_QQ_EXT_INT,
+                    QQShare.SHARE_TO_QQ_FLAG_QZONE_AUTO_OPEN);
+            mTencent.shareToQzone(activity, params, null);
+        } catch (Exception e) {
+            Toast.makeText(activity,"分享失败",Toast.LENGTH_LONG).show();
+        }
     }
 
     public static final void SHOWPOPUPWINDOW(final Tencent tencent, View view, final PopupWindow popupWindow, final LinearLayout linearLayout, final Activity activity){
@@ -149,20 +158,24 @@ public class UtilDao {
      * @param i 好友或者朋友圈
      */
     private static final void onShowWx(Activity activity,int i) {
-        IWXAPI api = WXAPIFactory.createWXAPI(activity, Constants.APP_ID);
-        WXWebpageObject webpage = new WXWebpageObject();
-        webpage.webpageUrl = "http://shouji.baidu.com/software/21842018.html";
-        WXMediaMessage msg = new WXMediaMessage(webpage);
-        msg.title = "歆语计算器";
-        msg.description = "语混合计算器，触手可及，畅享运算";
-        Bitmap thumb = BitmapFactory.decodeResource(activity.getResources(), R.mipmap.ic_launcher);
-        msg.thumbData = Util.bmpToByteArray(thumb, true);
-        SendMessageToWX.Req req = new SendMessageToWX.Req();
-        req.transaction = buildTransaction("webpage");
-        req.message = msg;
-        req.scene = i == 1 ? SendMessageToWX.Req.WXSceneSession
-                : SendMessageToWX.Req.WXSceneTimeline;
-        api.sendReq(req);
+        try {
+            IWXAPI api = WXAPIFactory.createWXAPI(activity, Constants.APP_ID);
+            WXWebpageObject webpage = new WXWebpageObject();
+            webpage.webpageUrl = "http://shouji.baidu.com/software/21842018.html";
+            WXMediaMessage msg = new WXMediaMessage(webpage);
+            msg.title = "歆语计算器";
+            msg.description = "语混合计算器，触手可及，畅享运算";
+            Bitmap thumb = BitmapFactory.decodeResource(activity.getResources(), R.mipmap.ic_launcher);
+            msg.thumbData = Util.bmpToByteArray(thumb, true);
+            SendMessageToWX.Req req = new SendMessageToWX.Req();
+            req.transaction = buildTransaction("webpage");
+            req.message = msg;
+            req.scene = i == 1 ? SendMessageToWX.Req.WXSceneSession
+                    : SendMessageToWX.Req.WXSceneTimeline;
+            api.sendReq(req);
+        } catch (Exception e) {
+            Toast.makeText(activity,"分享失败",Toast.LENGTH_LONG).show();
+        }
     }
     private static final String buildTransaction(final String type) {
         return (type == null) ? String.valueOf(System.currentTimeMillis())

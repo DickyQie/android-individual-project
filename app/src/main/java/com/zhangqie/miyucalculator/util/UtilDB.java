@@ -94,6 +94,30 @@ public class UtilDB {
         return false;
     }
 
+    /***
+     * 点的输入限制
+     * @param str
+     * @return
+     */
+    public static boolean ISDIANFES(String str) {
+        int a=str.lastIndexOf("+");
+        int b=str.lastIndexOf("-");
+        int c=str.lastIndexOf("÷");
+        int d=str.lastIndexOf("×");
+        int e=a>b?a:b;
+        int f=c>d?c:d;
+        int g=e>f?e:f;
+        if (g==(str.length()-1)){
+            return false;
+        }
+        String aa=str.substring((g+1),str.length());
+        if(aa.indexOf(".")==-1){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
     /**
      * 判断当前字符或字符串是否是取余
      * @param str

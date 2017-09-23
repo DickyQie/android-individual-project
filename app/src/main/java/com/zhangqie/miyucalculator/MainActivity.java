@@ -1,6 +1,5 @@
 package com.zhangqie.miyucalculator;
 
-import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -13,7 +12,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import com.tencent.connect.share.QQShare;
 import com.tencent.tauth.Tencent;
 import com.zhangqie.miyucalculator.base.BaseActivity;
 import com.zhangqie.miyucalculator.ui.my.AboutActivity;
@@ -61,7 +59,6 @@ public class MainActivity extends BaseActivity
     DrawerLayout drawer;
 
     Tencent mTencent;
-    String mAppid="1106218221";
     @Override
     protected int setMainLayout() {
         return R.layout.activity_main;
@@ -85,7 +82,7 @@ public class MainActivity extends BaseActivity
     @Override
     protected void initBeforeData() {
         if (mTencent == null) {
-            mTencent = Tencent.createInstance(mAppid, MainActivity.this);
+            mTencent = Tencent.createInstance(getString(R.string.appId), MainActivity.this);
         }
     }
 
@@ -297,7 +294,7 @@ public class MainActivity extends BaseActivity
                 if (!UtilDB.ISNUMBERQYS(num2)){
                     if(num2.length()>0){
                         if (UtilDB.ISSHOWDES(num2)) {
-                            if (UtilDB.ISFANGSHI(num2)) {
+                            if (UtilDB.ISFANGSHI(num2) && UtilDB.ISDIANFES(num2)) {
                                 textNum2.append(".");
                             } else if (!UtilDB.ISFANGSHI(num2) && num2.indexOf(".")==-1) {
                                 textNum2.append(".");
@@ -307,11 +304,11 @@ public class MainActivity extends BaseActivity
                 }
                 break;
             case R.id.item_update:
-                if (!UtilDB.ISFANGSHI(num2)){
-                    showToastShort(R.string.error_calculator_error);
-                    return;
+                if (num2.length()>1) {
+                    textNum1.setText(UtilDB.setNum(num2) + "=");
+                }else {
+                    textNum1.setText(num2+"=");
                 }
-                textNum1.setText(UtilDB.setNum(num2)+"=");
                 if (UtilDB.ISNUMBERQYS(num2)) {
                     String[] strings=num2.split("%");
                     if (strings.length>1){
@@ -341,6 +338,7 @@ public class MainActivity extends BaseActivity
                                textNum2.setText("");
                            }
                        }else {
+                           textNum1.setText("0");
                            textNum2.setText("");
                            showToastShort(R.string.error_calculator_error);
                        }
@@ -348,6 +346,7 @@ public class MainActivity extends BaseActivity
 
                 }else if (num2.length()<=2){
                     textNum2.setText(num2);
+                }else {
                 }
                 break;
         }

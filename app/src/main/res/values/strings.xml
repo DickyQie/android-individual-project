@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">歆语计算器</string>
 
+    <string name="appId">1106218221</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
