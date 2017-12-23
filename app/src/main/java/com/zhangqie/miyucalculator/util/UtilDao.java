@@ -44,10 +44,10 @@ public class UtilDao {
             try {
                     PackageManager manager = activity.getPackageManager();
                     PackageInfo info = manager.getPackageInfo(activity.getPackageName(), 0);
-                    String version ="V "+info.versionCode+"."+info.versionName;
+                    String version ="V "+info.versionName;
                     return  version;
                 } catch (Exception e) {
-                     return "V 2.2.1";
+                     return "V 2.2.2";
             }
     }
 
@@ -65,9 +65,9 @@ public class UtilDao {
             params.putString(QQShare.SHARE_TO_QQ_TITLE, "歆语计算器");
             params.putString(QQShare.SHARE_TO_QQ_SUMMARY, "歆语混合计算器，触手可及，畅享运算");
             params.putString(QQShare.SHARE_TO_QQ_TARGET_URL,
-                    "http://shouji.baidu.com/software/21842018.html");
+                    "http://sj.qq.com/myapp/detail.htm?apkName=com.zhangqie.miyucalculator");
             params.putString(QQShare.SHARE_TO_QQ_IMAGE_URL,
-                    "http://img.r1.market.hiapk.com/data/upload/2017/07_15/15/72_72_20170715031045_7155.png");
+                    "http://gdown.baidu.com/img/0/512_512/b8508b5dbcb1239d4232a9b8e8b8ab68.png");
             params.putString(QQShare.SHARE_TO_QQ_APP_NAME, "切切歆语");
             params.putString(QQShare.SHARE_TO_QQ_EXT_INT, "其他附加功能");
             mTencent.shareToQQ(activity, params, null);
@@ -91,9 +91,9 @@ public class UtilDao {
             params.putString(QzoneShare.SHARE_TO_QQ_SUMMARY, "歆语混合计算器，触手可及，畅享运算");
             params.putString(QzoneShare.SHARE_TO_QQ_APP_NAME, "切切歆语");
             params.putString(QzoneShare.SHARE_TO_QQ_TARGET_URL,
-                    "http://shouji.baidu.com/software/21842018.html");
+                    "http://sj.qq.com/myapp/detail.htm?apkName=com.zhangqie.miyucalculator");
             ArrayList<String> imageUrls = new ArrayList<String>();
-            imageUrls.add("http://img.r1.market.hiapk.com/data/upload/2017/07_15/15/72_72_20170715031045_7155.png");
+            imageUrls.add("http://gdown.baidu.com/img/0/512_512/b8508b5dbcb1239d4232a9b8e8b8ab68.png");
             params.putStringArrayList(QzoneShare.SHARE_TO_QQ_IMAGE_URL, imageUrls);
             params.putInt(QzoneShare.SHARE_TO_QQ_EXT_INT,
                     QQShare.SHARE_TO_QQ_FLAG_QZONE_AUTO_OPEN);
@@ -161,7 +161,7 @@ public class UtilDao {
         try {
             IWXAPI api = WXAPIFactory.createWXAPI(activity, Constants.APP_ID);
             WXWebpageObject webpage = new WXWebpageObject();
-            webpage.webpageUrl = "http://shouji.baidu.com/software/21842018.html";
+            webpage.webpageUrl = "http://sj.qq.com/myapp/detail.htm?apkName=com.zhangqie.miyucalculator";
             WXMediaMessage msg = new WXMediaMessage(webpage);
             msg.title = "歆语计算器";
             msg.description = "语混合计算器，触手可及，畅享运算";
