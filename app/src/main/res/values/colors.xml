@@ -2,13 +2,13 @@
 <resources>
     <!--<color name="colorPrimary">#2E3142</color>-->
    <!-- <color name="colorPrimaryDark">#1E3142</color>-->
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#1B82D2</color>
 
   <!-- <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
 -->
     <color name="colorPrimary">#1B82D2</color>
-    <color name="colorPrimaryDark">#14619D</color>
+    <color name="colorPrimaryDark">#1B82D2</color>
 
     <color name="colorBlue">#3E98F1</color>
 

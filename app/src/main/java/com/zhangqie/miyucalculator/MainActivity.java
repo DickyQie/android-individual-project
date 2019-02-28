@@ -27,9 +27,15 @@ import java.math.BigDecimal;
 import butterknife.Bind;
 import butterknife.OnClick;
 
+/***
+ *
+ * 打包
+ * 别名(alias): miyu
+ * 密码：123456
+ *
+ */
 public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
 
     @Bind(R.id.text_num1)
     TextView textNum1;
